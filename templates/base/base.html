@@ -1,15 +1,41 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang='en'>
-    <head>
-        <meta charset='utf-8'>
-        <link rel="stylesheet" 
-        href="{% static "/bootstrap/css/bootstrap.min.css" %}"> 
-        <title>Ancient Cafeteria</title>     
-    </head>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
 <body>
-    {%block content%}
-    {%endblock%}
+    <main>
+    <!--navbar-->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <!--Sitename and collpase button-->
+            <a class="navbar-brand" href="{%url 'home'%}">Cafeteria</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse"
+            data-bs-target="#navcol">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!--Collapse when sm-->
+            <div class="collapse navbar-collapse"
+            id="navcol">
+             <ul class="navbar-nav me-auto">
+                 <li class="nav-item"><a class="nav-link">Home</a></li>
+                 <li class="nav-item"><a class="nav-link">Login</a></li>
+                 <li class="nav-item"><a class="nav-link">Products</a></li>
+                 <li class="nav-item"><a class="nav-link">Contact Us</a></li>
+             </ul>
+            <!---SearchBar-->
+            <form><input class="form-control" type="text" placeholder="Search"></form>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+    {% block content %}{% endblock %}
+    <div>
+    </main>
+    <script src="{%static 'js/bootstrap.min.js'%}"></script>
 </body>
-<script src="{%static "/bootstrap/js/bootstrap.min.js"%}"></script>
 </html>
