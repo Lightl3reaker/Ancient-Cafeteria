@@ -16,4 +16,8 @@ For study purpose only.<br>
 - [x] static files test
 - [x] boostrap test
 - [x] making a navbar in base
-  More Comming Soon.:-)
+- [ ] making some Products carousel
+- [ ] making some jumbotrons
+- [ ] adding product images
+  <br>
+  More Comming Soon..
