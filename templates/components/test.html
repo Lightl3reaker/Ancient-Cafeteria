@@ -1,0 +1,10 @@
+<div class="container-fluid align-contents-center">
+    <p class="display-4">This is from test</p>
+    <ul>
+    {% for image in carousel_imgs %}
+        <li>{{image.title}}</li>
+        <img src="{{image.image.url}}" class="h-25">
+    {%endfor%}
+    </ul>
+    
+</div>
