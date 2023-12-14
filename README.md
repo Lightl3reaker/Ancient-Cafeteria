@@ -20,9 +20,12 @@ For study purpose only.:test_tube::alembic:<br>
     - [ ] making actual carousel
     - [ ] smoothed carousel
 - [ ] making some jumbotrons in home page
-- [ ] creating product models and relating fields
-- [ ] creating a product grid page
+- [x] creating product models and relating fields
+- [x] creating a product grid page
+  - [ ] adding product counts
+  - [ ] adding tags with badges in grid
 - [ ] spliting categories
-- [ ] adding product images
+- [x] adding product images
+  - [ ] making some thumbnails
   <br>
   (More Comming Soon..):star_struck:

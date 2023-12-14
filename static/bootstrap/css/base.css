@@ -1,8 +1,8 @@
 p{
-    color:aqua;
+    color:rgb(92, 89, 78);
 }
 .display-3{
-    color:magenta;
+    color:rgb(239, 194, 31);
 }
 .carousel-item{
     height: 400px;
@@ -13,4 +13,7 @@ p{
     left: 0;
     min-width: 100%;
     height: 400px;
+}
+.card-img-top{
+    height: 180px;
 }
