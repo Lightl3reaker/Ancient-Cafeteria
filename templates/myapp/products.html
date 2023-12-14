@@ -8,6 +8,11 @@
         <div class="card-body">
             <h4 class="card-title">{{product.title}}</h4>
             <p class="card-text">{{product.description|truncatechars:100}}</p>
+            <div class="mb-2">
+            {% for tag in product.tags.all %}
+            <span class="badge bg-secondary">{{tag}}</span>
+            {% endfor %}
+            </div>
             <p class="card-text">{{product.price}}MMK</p>
             <a href="#" class="btn btn-primary">button</a>
         </div>

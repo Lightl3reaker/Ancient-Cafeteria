@@ -23,7 +23,7 @@ For study purpose only.:test_tube::alembic:<br>
 - [x] creating product models and relating fields
 - [x] creating a product grid page
   - [ ] adding product counts
-  - [ ] adding tags with badges in grid
+  - [x] adding tags with badges in grid
 - [ ] spliting categories
 - [x] adding product images
   - [ ] making some thumbnails
