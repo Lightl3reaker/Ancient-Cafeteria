@@ -1,6 +1,6 @@
 # Ancient-Cafeteria
  A cafeteria webproject with django framework.<br>
-For study purpose only.<br>
+For study purpose only.:test_tube::alembic:<br>
 ## Using this repo
  Plz make installation dependencies from requriements.txt file.
 ## Notes for Project Directories
@@ -16,8 +16,13 @@ For study purpose only.<br>
 - [x] static files test
 - [x] boostrap test
 - [x] making a navbar in base
-- [ ] making some Products carousel
-- [ ] making some jumbotrons
+- [x] making some Products basic carousel
+    - [ ] making actual carousel
+    - [ ] smoothed carousel
+- [ ] making some jumbotrons in home page
+- [ ] creating product models and relating fields
+- [ ] creating a product grid page
+- [ ] spliting categories
 - [ ] adding product images
   <br>
-  More Comming Soon..
+  (More Comming Soon..):star_struck:
