@@ -24,13 +24,13 @@
             id="navcol">
              <ul class="navbar-nav me-auto">
                  <li class="nav-item">
-                    <a class="nav-link"
+                    <a class="nav-link active"
                     href="{% url 'home' %}">Home</a>
                 </li>
                  <li class="nav-item"><a class="nav-link">Login</a></li>
                  <li class="nav-item">
                 <a class="nav-link" href="{% url 'products_view' %}">
-                    Products</a>
+                    Products<span class="badge rounded-pill bg-secondary">{{counts}}</span></a>
                 </li>
                  <li class="nav-item"><a class="nav-link">Contact Us</a></li>
              </ul>
