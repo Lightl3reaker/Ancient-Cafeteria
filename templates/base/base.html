@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'bootstrap/css/base.css' %}">
     <title>{% block title %}{% endblock %}</title>
 </head>
@@ -27,13 +27,23 @@
                     <a class="nav-link active"
                     href="{% url 'home' %}">Home</a>
                 </li>
-                 <li class="nav-item"><a class="nav-link">Login</a></li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">
+                        Login
+                    </a>
+                </li>
                  <li class="nav-item">
                 <a class="nav-link" href="{% url 'products_view' %}">
                     Products<span class="badge rounded-pill bg-secondary">{{counts}}</span></a>
                 </li>
                  <li class="nav-item"><a class="nav-link">Contact Us</a></li>
              </ul>
+             <div class="navbar-brand">
+                {{request.user.username}}
+            </div>
+            {% if status == False %}
+            <div class=navbar-brand>Anonymous</div>
+            {%endif%}
             <!---SearchBar-->
             <form><input class="form-control" type="text" placeholder="Search"></form>
             </div>
