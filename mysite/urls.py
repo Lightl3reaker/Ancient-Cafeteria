@@ -24,7 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',myapp_views.index,name='home'),
     path('products/',myapp_views.products_view,name="products_view"),
+    path('filterby/<slug:slug>/',myapp_views.Filterby,name="products_filter"),
     path('accounts/login/',myapp_views.CustomLogin.as_view(),name="login"),
     path('accounts/logout/',myapp_views.CustomLogout.as_view(),name="logout"),
-    path('accounts/signup/',myapp_views.CustomSignup.as_view(),name="signup")
+    path('accounts/signup/',myapp_views.CustomSignup.as_view(),name="signup"),
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

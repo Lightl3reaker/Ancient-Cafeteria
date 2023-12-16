@@ -29,6 +29,7 @@ For study purpose only.:test_tube::alembic:<br>
 - [x] creating a product grid page
   - [x] adding product counts in home page
   - [x] adding tags with badges in grid
+  - [x] adding filter feature for products
 - [ ] spliting categories
 - [x] adding product images
   - [ ] making some thumbnails

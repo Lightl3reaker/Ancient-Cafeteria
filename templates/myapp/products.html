@@ -1,10 +1,25 @@
 {% extends 'base/base.html' %}
 {% block content %}
-<div class="row pt-5">
+<div class="container-fluid align-content-left my-2">
+    <div class="dropdown">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+            Filter By
+        </button>
+        <ul class="dropdown-menu align-content-center">
+            {% for tag in tags %}
+            <li>
+                <a class="dropdown-item" href="{%url 'products_filter' tag.slug %}">
+                {{tag}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<div class="row">
     {% for product in products %}
     <div class="col-md-4">
         <div class="card">
-        <img class="card-img-top" src="{{product.image.url}}">
+        <img class="card-img-top" src="{{product.image_thumbnail.url}}">
         <div class="card-body">
             <h4 class="card-title">{{product.title}}</h4>
             <p class="card-text">{{product.description|truncatechars:100}}</p>
