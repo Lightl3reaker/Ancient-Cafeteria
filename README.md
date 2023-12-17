@@ -40,4 +40,4 @@ For study purpose only.:test_tube::alembic:<br>
 
 ### FlowChart
 ![UI/UX Flowchart](https://github.com/Lightl3reaker/Ancient-Cafeteria/blob/master/ui_ux.png)
-  (More Comming Soon..):star_struck:
+  (More Comming Soon..) :star_struck:
