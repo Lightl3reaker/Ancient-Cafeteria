@@ -1,56 +1,65 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'bootstrap/css/base.css' %}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="{% static 'bootstrap/css/bootstrap.min.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'bootstrap/css/base.css' %}" />
     <title>{% block title %}{% endblock %}</title>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-    <!--navbar-->
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <!--navbar-->
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container-fluid">
-            <!--Sitename and collpase button-->
-            <a class="navbar-brand" href="{%url 'home'%}">Cafeteria</a>
-            <button class="navbar-toggler" data-bs-toggle="collapse"
-            data-bs-target="#navcol">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!--Collapse when sm-->
-            <div class="collapse navbar-collapse"
-            id="navcol">
-             <ul class="navbar-nav me-auto">
-                 <li class="nav-item">
-                    <a class="nav-link active"
-                    href="{% url 'home' %}">Home</a>
-                </li>
-                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}">
-                        Login
-                    </a>
-                </li>
-                 <li class="nav-item">
+          <!--Sitename and collpase button-->
+          <a class="navbar-brand" href="{%url 'home'%}">Cafeteria</a>
+          <button
+            class="navbar-toggler"
+            data-bs-toggle="collapse"
+            data-bs-target="#navcol"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!--Collapse when sm-->
+          <div class="collapse navbar-collapse" id="navcol">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'home' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}"> Login </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'signup' %}"> Sign Up </a>
+              </li>
+
+              <li class="nav-item">
                 <a class="nav-link" href="{% url 'products_view' %}">
-                    Products<span class="badge rounded-pill bg-secondary">{{counts}}</span></a>
-                </li>
-                 <li class="nav-item"><a class="nav-link">Contact Us</a></li>
-             </ul>
-             <div class="navbar-brand">
-                {{request.user.username}}
-            </div>
+                  Products<span class="badge rounded-pill bg-secondary"
+                    >{{counts}}</span
+                  ></a
+                >
+              </li>
+              <li class="nav-item"><a class="nav-link">Contact Us</a></li>
+            </ul>
+            <div class="navbar-brand">{{request.user.username}}</div>
             {% if status == False %}
-            <div class=navbar-brand>Anonymous</div>
+            <div class="navbar-brand">Anonymous</div>
             {%endif%}
             <!---SearchBar-->
-            <form><input class="form-control" type="text" placeholder="Search"></form>
-            </div>
+            <form>
+              <input class="form-control" type="text" placeholder="Search" />
+            </form>
+          </div>
         </div>
-    </nav>
-    {% block content %}{% endblock %}
+      </nav>
+      {% block content %}{% endblock %}
     </main>
     <script src="{%static 'js/bootstrap.min.js'%}"></script>
-</body>
+  </body>
 </html>

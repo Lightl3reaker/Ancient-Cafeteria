@@ -32,3 +32,6 @@ class UserProfile(models.Model):
     profile_picture=models.ImageField(upload_to='profile_pics/')
     def __str__(self):
         return self.user.username
+
+
+    

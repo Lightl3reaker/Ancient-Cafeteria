@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView,LogoutView
 from myapp.models import carousel_img,Product
+from .forms import SignupForm
 
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
@@ -24,6 +25,10 @@ def index(request):
     carousel_imgs=carousel_img.objects.all()
     return render(request,'myapp/index.html',
                   {'carousel_imgs':carousel_imgs,'counts':counts,'status':status})
+    
+def signup(request):
+    form = SignupForm()
+    return render(request,'registration/signup.html')
 
 @login_required
 def products_view(request):
@@ -34,7 +39,9 @@ class CustomLogin(LoginView):
     template_name="registration/customlogin.html"
 class CustomLogout(LogoutView):
     template_name="registration/customlogout.html"
+    
 class CustomSignup(CreateView):
     template_name='registration/signup.html'
     form_class=UserCreationForm
     success_url=reverse_lazy('login')
+    

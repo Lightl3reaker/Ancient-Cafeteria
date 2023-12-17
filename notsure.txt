@@ -1,0 +1,16 @@
+{{form.as_p}}
+
+<div class="mb-3">
+      <label class="inline-block mb-2">Email</label><br />
+      {{ form.email }}
+    </div>
+
+class CustomSignup(CreateView):
+    template_name='registration/signup.html'
+    form_class=UserCreationForm
+    success_url=reverse_lazy('login')
+
+def signup(request):
+
+path('accounts/signup/',myapp_views.CustomSignup.as_view(),name="signup")
+
