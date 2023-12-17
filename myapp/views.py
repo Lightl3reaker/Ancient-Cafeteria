@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView,LogoutView
 from myapp.models import carousel_img,Product
@@ -29,8 +29,14 @@ def index(request):
                   {'carousel_imgs':carousel_imgs,'counts':counts,'status':status})
     
 def signup(request):
-    form = SignupForm()
-    return render(request,'registration/signup.html')
+    if request.method=="POST":
+        form = SignupForm()
+        #if form.is_valid():
+         #   form.save()
+          #  return redirect('home')
+    else:
+        form=SignupForm()   
+    return render(request,'registration/signup.html',{'form':form})
 
 @login_required
 def products_view(request):
@@ -43,10 +49,10 @@ class CustomLogin(LoginView):
 class CustomLogout(LogoutView):
     template_name="registration/customlogout.html"
     
-class CustomSignup(CreateView):
-    template_name='registration/signup.html'
-    form_class=UserCreationForm
-    success_url=reverse_lazy('login')
+#class CustomSignup(CreateView):
+#   template_name='registration/signup.html'
+#   form_class=SignupForm
+#   success_url=reverse_lazy('login')
 
 def Filterby(request,slug=None):
     products=Product.objects.filter(tags__slug=slug)

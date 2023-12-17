@@ -1,36 +1,18 @@
 {% extends "base/base.html" %} 
 {%block content%}
-<div class="w-1/2 container-fluid my-6 mx-auto p-6 bg-gray-100 rounded-xl">
-  <h1 class="mb-6 text-3xl">Sign Up</h1>
+<div class="container-fluid form-signup p-5 mt-3">
+  <h1 class="mb-6">SignUp</h1>
   <form method="post" action=".">
     {% csrf_token %}
-
-    <div class="mb-3">
-      <label class="inline-block mb-2">UserName</label><br />
-      {{ form.username }}
-    </div>
-
-    <div class="mb-3">
-      <label class="inline-block mb-2">Password</label><br />
-      {{ form.password1 }}
-    </div>
-
-    <div class="mb-3">
-      <label class="inline-block mb-2">Confirm Password</label><br />
-      {{ form.password2 }}
-    </div>
-
+    {%include 'myapp/form_snippet.html'%}
     {% if form.errors or form.non_field_errors %}
-    <div class="mb-3 p-6 bg-red-100 rounded-xl">
+    <div class="mb-3 p-6 bg-red-100 rounded-pill">
       {%for field in form %} {{ field.errors }} {% endfor %} {{
       form.non_field_errors }}
     </div>
     {% endif %}
-
-    <button
-      class="py-4 px-8 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white"
-    >
-      Submit
+    <button class="btn btn-transparent btn-lg w-100 mt-3" type="submit">
+      Signup
     </button>
   </form>
 </div>
