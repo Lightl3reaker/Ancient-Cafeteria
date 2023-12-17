@@ -1,0 +1,8 @@
+{%load widget_tweaks%}
+{%for field in form%}
+<div class="mt-1">
+    {{field.errors}}
+    {{field.label_tag}}
+    {{field |add_class:"form-control mb-2"}}
+</div>
+{%endfor%}

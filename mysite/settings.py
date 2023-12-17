@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'base',
     'myapp',
     'imagekit',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
