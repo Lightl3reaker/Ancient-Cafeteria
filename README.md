@@ -32,7 +32,7 @@ For study purpose only.:test_tube::alembic:<br>
   - [x] adding filter feature for products
 - [ ] spliting categories
 - [x] adding product images
-  - [ ] making some thumbnails
+  - [x] making some thumbnails
 - [x] linked a custom loginview,signup and logout(not worked)
   - [ ] using cripsy-form and widget-tweak for forms
 - [x] displaying user name in Navbar
