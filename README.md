@@ -1,6 +1,6 @@
 # Ancient-Cafeteria
  A cafeteria webproject with django framework.<br>
-For study purpose only.:test_tube::alembic:<br>
+For study purpose only. :test_tube: :alembic: <br>
 ## Using this repo
  Plz make installation dependencies from requriements.txt file.
 ## Notes for Project Directories
