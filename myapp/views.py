@@ -1,12 +1,9 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView,LogoutView
-#<<<<<<< HEAD
 from myapp.models import carousel_img,Product
 from .forms import SignupForm
-#=======
 from myapp.models import carousel_img,Product,Tag
-#>>>>>>> 5dd76a5ea0d86ba7fc7d7455814f2930274e8410
 
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
@@ -50,9 +47,6 @@ class CustomSignup(CreateView):
     template_name='registration/signup.html'
     form_class=UserCreationForm
     success_url=reverse_lazy('login')
-#<<<<<<< HEAD
-    
-#=======
 
 def Filterby(request,slug=None):
     products=Product.objects.filter(tags__slug=slug)
@@ -61,4 +55,3 @@ def Filterby(request,slug=None):
         'counts':counts,
         'tags':tags,
         })
-#>>>>>>> 5dd76a5ea0d86ba7fc7d7455814f2930274e8410

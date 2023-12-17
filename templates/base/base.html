@@ -16,7 +16,6 @@
       <!--navbar-->
       <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container-fluid">
-<<<<<<< HEAD
           <!--Sitename and collpase button-->
           <a class="navbar-brand" href="{%url 'home'%}">Cafeteria</a>
           <button
@@ -40,35 +39,6 @@
               </li>
 
               <li class="nav-item">
-=======
-            <!--Sitename and collpase button-->
-            <a class="navbar-brand" href="{%url 'home'%}">Cafeteria</a>
-            <button class="navbar-toggler" data-bs-toggle="collapse"
-            data-bs-target="#navcol">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!--Collapse when sm-->
-            <div class="collapse navbar-collapse"
-            id="navcol">
-             <ul class="navbar-nav me-auto">
-                 <li class="nav-item">
-                    <a class="nav-link active"
-                    href="{% url 'home' %}">Home</a>
-                </li>
-                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle"
-                    data-bs-toggle="dropdown" type="button">Acconts</a>
-                    <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="{% url 'login' %}">
-                        Login
-                    </a></li>
-                    <li><a class="dropdown-item" href="{%url 'signup'%}">
-                        Signup
-                    </a></li>
-                    </ul>
-                </li>
-                 <li class="nav-item">
->>>>>>> 5dd76a5ea0d86ba7fc7d7455814f2930274e8410
                 <a class="nav-link" href="{% url 'products_view' %}">
                   Products<span class="badge rounded-pill bg-secondary"
                     >{{counts}}</span
@@ -90,12 +60,7 @@
       </nav>
       {% block content %}{% endblock %}
     </main>
-<<<<<<< HEAD
-    <script src="{%static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
   </body>
 </html>
-=======
-    <script src="{%static 'bootstrap/js/bootstrap.bundle.min.js'%}"></script>
-</body>
-</html>
->>>>>>> 5dd76a5ea0d86ba7fc7d7455814f2930274e8410
+
