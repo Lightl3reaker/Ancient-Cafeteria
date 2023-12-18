@@ -14,7 +14,7 @@ For study purpose only. :test_tube: :alembic: <br>
   django.contrib.auth.views to customize views
   -->If you want to add some form field customize by inheriting 
   django.contrib.auth.forms.
-## To-Do List
+<h2 style="color: red;">To-Do List</h2>
 
 - [x] base/home test
 - [x] template location test
