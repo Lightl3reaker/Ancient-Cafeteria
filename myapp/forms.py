@@ -13,7 +13,7 @@ class UserProfileForm(forms.ModelForm):
             attrs={"class":"form-control"}
         )
 }
-    
+     
 class SignupForm(UserCreationForm):
     class Meta:
         model = User

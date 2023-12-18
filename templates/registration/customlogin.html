@@ -1,11 +1,13 @@
 <!-- templates/registration/login.html -->
 {% extends 'base/base.html' %}
-
 {% block content %}
-    <h2>Login</h2>
-    <form method="post" action="{% url 'login' %}">
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit">Login</button>
-    </form>
+<div class="container-fluid form-login p-5 mt-4">
+  <h1 class="display-3 mb-5">LogIn</h1>
+  <form method="POST" action="{%url 'login'%}">
+    {% csrf_token %}
+    {%include 'myapp/form_snippet.html'%}
+    
+    <button class="btn btn-transparent w-100 mt-3" type="submit">LogIn</button>
+  </form>
+</div>
 {% endblock %}

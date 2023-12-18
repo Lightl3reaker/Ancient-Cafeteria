@@ -5,12 +5,14 @@
   <form method="post" action=".">
     {% csrf_token %}
     {%include 'myapp/form_snippet.html'%}
+
     {% if form.errors or form.non_field_errors %}
     <div class="mb-3 p-6 bg-red-100 rounded-pill">
       {%for field in form %} {{ field.errors }} {% endfor %} {{
       form.non_field_errors }}
     </div>
     {% endif %}
+    
     <button class="btn btn-transparent btn-lg w-100 mt-3" type="submit">
       Signup
     </button>

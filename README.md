@@ -1,6 +1,6 @@
 # Ancient-Cafeteria
  A cafeteria webproject with django framework.<br>
-For study purpose only.:test_tube::alembic:<br>
+For study purpose only. :test_tube: :alembic: <br>
 ## Using this repo
  Plz make installation dependencies from requriements.txt file.
 ## Notes for Project Directories
@@ -14,7 +14,7 @@ For study purpose only.:test_tube::alembic:<br>
   django.contrib.auth.views to customize views
   -->If you want to add some form field customize by inheriting 
   django.contrib.auth.forms.
-## To-Do List
+<h2 style="color: red;">To-Do List</h2>
 
 - [x] base/home test
 - [x] template location test
@@ -37,4 +37,7 @@ For study purpose only.:test_tube::alembic:<br>
   - [ ] using cripsy-form and widget-tweak for forms
 - [x] displaying user name in Navbar
   <br>
-  (More Comming Soon..):star_struck:
+
+### FlowChart
+![UI/UX Flowchart](https://github.com/Lightl3reaker/Ancient-Cafeteria/blob/master/ui_ux.png)
+  (More Comming Soon..) :star_struck:

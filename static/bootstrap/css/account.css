@@ -1,0 +1,24 @@
+.form-signup{
+    width: 100%;
+    max-width: 330px;
+    color: white;
+    background: conic-gradient(from 45deg, rgba(169, 142, 14, 1.0), rgba(43, 46, 42, 1.0));
+    text-align:  center;
+    border-radius: 30px 30px;
+    box-shadow: 7px 14px 30px 0px rgba(93,87,87,0.75);
+
+}
+.form-login{
+    width: 100%;
+    max-width: 330px;
+    height: 100%;
+    color: white;
+    background: conic-gradient(from 45deg, rgba(169, 142, 14, 1.0), rgba(43, 46, 42, 1.0));
+    text-align:  center;
+    border-radius: 30px 30px;
+    box-shadow: 7px 14px 30px 0px rgba(93,87,87,0.75);
+
+}
+.btn-transparent{
+    background: transparent !important;
+}
