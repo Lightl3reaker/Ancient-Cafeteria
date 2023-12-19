@@ -37,6 +37,15 @@ For study purpose only. :test_tube: :alembic: <br>
   - [ ] using cripsy-form and widget-tweak for forms
 - [x] displaying user name in Navbar
   <br>
+  ## Progress
+  ### Home
+  ->Navbar<br>
+  ->Carousel Basic<br>
+  ->UserProfiles<br>
+  ### Products
+  ->Products grid show<br>
+  ->Filter Feature<br>
+  ->
 
 ### FlowChart
 ![UI/UX Flowchart](https://github.com/Lightl3reaker/Ancient-Cafeteria/blob/master/ui_ux.png)

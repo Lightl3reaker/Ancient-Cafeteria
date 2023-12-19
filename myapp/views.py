@@ -2,9 +2,8 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView,LogoutView
 from myapp.models import carousel_img,Product
-from .forms import SignupForm,UserProfileForm
+from .forms import UserProfileForm
 from myapp.models import carousel_img,Product,Tag,UserProfile
-from .forms import SignupForm
 from myapp.models import carousel_img,Product,Tag,Contact
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
@@ -31,14 +30,18 @@ def index(request):
                   {'carousel_imgs':carousel_imgs,'counts':counts,'status':status})
     
 def signup(request):
+    user_form=UserCreationForm()
+    profile_form=UserProfileForm()
     if request.method=="POST":
-        form = SignupForm()
-        #if form.is_valid():
-         #   form.save()
-          #  return redirect('home')
-    else:
-        form=SignupForm()   
-    return render(request,'registration/signup.html',{'form':form})
+        user_form=UserCreationForm(request.POST)
+        profile_form=UserProfileForm(request.POST,request.FILES)
+        if user_form.is_valid() and profile_form.is_valid():
+            user=user_form.save()
+            profile=profile_form.save(commit=False)
+            profile.user=user
+            profile.save()
+            return redirect('login') 
+    return render(request,'registration/signup.html',{'user_form':user_form,'profile_form':profile_form})
 
 @login_required
 def view_profile(request):
