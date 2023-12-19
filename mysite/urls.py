@@ -28,4 +28,5 @@ urlpatterns = [
     path('accounts/login/',myapp_views.CustomLogin.as_view(),name="login"),
     path('accounts/logout/',myapp_views.CustomLogout.as_view(),name="logout"),
     path('accounts/signup/',myapp_views.signup,name="signup"),
+    path('user/profile',myapp_views.profile,name="profile")
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

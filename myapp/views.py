@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView,LogoutView
 from myapp.models import carousel_img,Product
-from .forms import SignupForm
+from .forms import SignupForm,UserProfileForm
 from myapp.models import carousel_img,Product,Tag
 
 from django.contrib.auth.forms import UserCreationForm
@@ -37,7 +37,12 @@ def signup(request):
     else:
         form=SignupForm()   
     return render(request,'registration/signup.html',{'form':form})
-
+def profile(request):
+    form=UserProfileForm()
+    if form.is_valid():
+        form.save()
+        return redirect('home')
+    return render(request,'Account/profile.html',{'form':form})
 @login_required
 def products_view(request):
     products=Product.objects.all()

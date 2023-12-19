@@ -4,6 +4,7 @@
 <div class="container-fluid form-login p-5 mt-4">
   <h1 class="display-3 mb-5">LogIn</h1>
   <form method="POST" action="{%url 'login'%}">
+    
     {% csrf_token %}
     {%include 'myapp/form_snippet.html'%}
     
