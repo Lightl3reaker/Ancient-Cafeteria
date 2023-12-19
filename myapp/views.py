@@ -100,5 +100,5 @@ def contact_us(request):
         contact.email = email
         contact.message = message
         contact.save()
-        return HttpResponse("<h1>Thanks for contact us..</h1>")
+        return render(request,"httpresponse/contactresponse.html")
     return render(request ,'myapp/contact.html')    
