@@ -8,10 +8,8 @@
       rel="stylesheet"
       href="{% static 'bootstrap/css/bootstrap.min.css' %}"
     />
-    <link rel="stylesheet" 
-    href="{% static 'bootstrap/css/base.css' %}"/>
-    <link rel="stylesheet"
-    href="{% static 'bootstrap/css/account.css' %}"/>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'bootstrap/css/account.css' %}" />
     <title>{% block title %}{% endblock %}</title>
   </head>
   <body>
@@ -48,7 +46,9 @@
                   ></a
                 >
               </li>
-              <li class="nav-item"><a class="nav-link">Contact Us</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+              </li>
             </ul>
             <div class="navbar-brand">{{request.user.username}}</div>
             {% if status == False %}
@@ -66,4 +66,3 @@
     <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
   </body>
 </html>
-

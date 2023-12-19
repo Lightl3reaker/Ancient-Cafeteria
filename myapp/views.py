@@ -3,11 +3,12 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView,LogoutView
 from myapp.models import carousel_img,Product
 from .forms import SignupForm
-from myapp.models import carousel_img,Product,Tag
+from myapp.models import carousel_img,Product,Tag,Contact
 
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
+from django.http import HttpResponse
 
 
 # Create your views here.
@@ -61,3 +62,16 @@ def Filterby(request,slug=None):
         'counts':counts,
         'tags':tags,
         })
+
+def contact_us(request):
+    if request.method == 'POST':
+        contact = Contact()
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+        contact.name = name
+        contact.email = email
+        contact.message = message
+        contact.save()
+        return HttpResponse("<h1>Thanks for contact us..</h1>")
+    return render(request ,'myapp/contact.html')    
