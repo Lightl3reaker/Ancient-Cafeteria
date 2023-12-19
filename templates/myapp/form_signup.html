@@ -1,0 +1,11 @@
+{%load widget_tweaks%}
+{%for field in user_form%}
+    {{field.errors}}
+    {{field.label_tag}}
+    {{field |add_class:"form-control mb-2"}}
+{%endfor%}
+{%for field in profile_form%}
+    {{field.errors}}
+    {{field.label_tag}}
+    {{field |add_class:"form-control mb-2"}}
+{%endfor%}

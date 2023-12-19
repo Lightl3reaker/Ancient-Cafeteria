@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from myapp.models import UserProfile 
 
 class UserProfileForm(forms.ModelForm):
+    bio=forms.CharField( max_length=500, required=False)
     class Meta:
         model=UserProfile
         fields=['bio','profile_picture']
