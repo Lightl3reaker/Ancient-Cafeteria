@@ -21,6 +21,7 @@ For study purpose only. :test_tube: :alembic: <br>
 - [x] static files test
 - [x] boostrap test
 - [x] making a navbar in base
+    - [x] improved navbar style(compact)
 - [x] making some Products basic carousel
     - [ ] making actual carousel
     - [ ] smoothed carousel
