@@ -1,0 +1,30 @@
+.gradient-custom {    
+    background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
+    }
+.img{
+    width:250px;
+}
+.avatar{
+    border-top-left-radius: 1rem;
+}
+.Bio{
+    border-bottom-right-radius: 1rem;
+}
+@media screen and (max-width: 768px){
+    .avatar{
+        border-top-right-radius: 1rem;
+    }
+    .Bio{
+        border-bottom-left-radius: 1rem;
+    }
+
+}
+@media screen and (min-width: 768px){
+    .avatar{
+        border-bottom-left-radius: 1rem;
+    }
+    .Bio{
+        border-top-right-radius: 1rem;
+    }
+
+}

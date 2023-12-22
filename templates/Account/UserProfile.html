@@ -1,0 +1,50 @@
+{%extends 'base/base.html'%}
+{%block content%}
+<section class="vh-100/">
+    <div class="container-fluid h-100 profile py-5">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-lg-6">
+                <div class="card">
+                    <div class="row g-0">
+                        <div class="col-md-5 p-3 avatar gradient-custom text-center text-light">
+                            <img src="{{user_profile.profile_picture.url}}" class="img img-fluid rounded-circle my-5">
+                            <h3>{{user_profile.user.username}}</h3>
+                            <a href="#">Edit<i class="m-3 far fa-edit mb-5"></i></a>
+                        </div>
+                        <div class="col-md-7 bg-info Bio text-light">
+                            <div class="card-body h-100  p-4">
+                                <div class="row">
+                                    <h6 class="text-center">Profile</h6>
+                                    <hr class="mt-0 mb-3">
+                                    <div class="col-md-4">
+                                        <p>Name</p>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p>{{user_profile.user.username}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <h6>Bio</h6>
+                                    <hr class="mt-0 mb-3">
+                                    <div class="col-md-4">
+                                        <p>Email</p>
+                                    </div>
+                                    <div class="col-md-8">
+                                        {%if user_profile.user.email%}
+                                        <p>{{user_profile.user.email}}</p>
+                                        {%else%}
+                                        <p>None</p>
+                                        {%endif%}
+                                    </div>
+                                </div>
+                            </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

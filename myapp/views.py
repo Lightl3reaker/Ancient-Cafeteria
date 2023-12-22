@@ -49,7 +49,7 @@ def view_profile(request):
         user_profile=UserProfile.objects.get(user=request.user)
     except UserProfile.DoesNotExist:
         user_profile=None
-    return render(request,'Account/profile_display.html',
+    return render(request,'Account/UserProfile.html',
                   {
                       'user_profile':user_profile
                   })
