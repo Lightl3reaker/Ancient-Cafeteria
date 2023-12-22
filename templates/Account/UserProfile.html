@@ -24,8 +24,8 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <h6>Bio</h6>
-                                    <hr class="mt-0 mb-3">
+                                    <h6>Contacts</h6>
+                                    <hr class="mt-0 mb-1">
                                     <div class="col-md-4">
                                         <p>Email</p>
                                     </div>
@@ -34,6 +34,20 @@
                                         <p>{{user_profile.user.email}}</p>
                                         {%else%}
                                         <p>None</p>
+                                        {%endif%}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <h6>Bio</h6>
+                                    <hr class="mt-0">
+                                    <div class="col-md-4">
+                                        <p>Bio</p>
+                                    </div>
+                                    <div class="col-md-8">
+                                        {%if user_profile.bio%}
+                                        <p>{{user_profile.bio}}</p>
+                                        {%else%}
+                                        <p>NO Biography</p>
                                         {%endif%}
                                     </div>
                                 </div>
