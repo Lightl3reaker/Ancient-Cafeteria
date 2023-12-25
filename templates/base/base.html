@@ -8,8 +8,11 @@
       rel="stylesheet"
       href="{% static 'bootstrap/css/bootstrap.min.css' %}"
     />
-    <link rel="stylesheet" href="{% static 'bootstrap/css/base.css' %}" />
-    <link rel="stylesheet" href="{% static 'bootstrap/css/account.css' %}" />
+    <link rel="stylesheet"
+    href="{% static 'fontawesome/pro/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/base.css' %}"/>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/account.css' %}"/>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/Profile.css' %}"/>
     <title>{% block title %}{% endblock %}</title>
   </head>
   <body>
@@ -32,18 +35,22 @@
               <li class="nav-item">
                 <a class="nav-link active" href="{% url 'home' %}">Home</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'login' %}"> Login </a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Account</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{%url 'login'%}">LogIn</a></li>
+                  <li><a class="dropdown-item" href="{%url 'signup'%}">SignUp</a></li>
+                </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'signup' %}"> Sign Up </a>
+              {%if request.user.is_authenticated%}
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{request.user.username}}</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{%url 'profile'%}">Profile</a></li>
+                  <li><a class="dropdown-item" href="{%url 'edit_profile'%}">Edit Profile</a></li>
+                </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{%url 'profile'%}">Profile</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{%url 'edit_profile'%}">Edit Profile</a>
-              </li>
+              {%endif%}
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'products_view' %}">
                   Products<span class="badge rounded-pill bg-secondary"

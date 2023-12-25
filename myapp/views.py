@@ -2,9 +2,8 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView,LogoutView
 from myapp.models import carousel_img,Product
-from .forms import UserProfileForm
-from myapp.models import carousel_img,Product,Tag,UserProfile
-from myapp.models import carousel_img,Product,Tag,Contact
+from .forms import UserProfileForm,UserEmailForm
+from myapp.models import carousel_img,Product,Tag,UserProfile,Contact
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
@@ -49,22 +48,31 @@ def view_profile(request):
         user_profile=UserProfile.objects.get(user=request.user)
     except UserProfile.DoesNotExist:
         user_profile=None
-    return render(request,'Account/profile_display.html',
+    return render(request,'Account/UserProfile.html',
                   {
                       'user_profile':user_profile
                   })
 @login_required
 def edit_profile(request):
+    user_profile = UserProfile.objects.get(user=request.user)
     if request.method=='POST':
-        form=UserProfileForm(
+        bio_form=UserProfileForm(
             request.POST,
-            request.FILES,instance=request.user.userprofile)
-        if form.is_valid():
-            form.save()
+            request.FILES,instance=user_profile)
+        email_form=UserEmailForm(
+            request.POST,
+            instance=request.user
+        )
+        if bio_form.is_valid() and email_form.is_valid():
+            bio_form.save()
+            email_form.save()
             return redirect('profile')
     else:
-        form=UserProfileForm(instance=request.user.userprofile)
-    return render(request,'Account/profile_edit.html',{'form':form})
+        bio_form=UserProfileForm(instance=request.user.userprofile)
+        email_form=UserEmailForm(instance=request.user)
+    return render(request,'Account/profile_edit.html',
+                  {'bio_form':bio_form}
+                  )
 
 @login_required
 def products_view(request):

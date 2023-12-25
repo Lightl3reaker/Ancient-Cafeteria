@@ -21,6 +21,7 @@ For study purpose only. :test_tube: :alembic: <br>
 - [x] static files test
 - [x] boostrap test
 - [x] making a navbar in base
+    - [x] improved navbar style(compact)
 - [x] making some Products basic carousel
     - [ ] making actual carousel
     - [ ] smoothed carousel
@@ -36,6 +37,11 @@ For study purpose only. :test_tube: :alembic: <br>
 - [x] linked a custom loginview,signup and logout(not worked)
   - [ ] using cripsy-form and widget-tweak for forms
 - [x] displaying user name in Navbar
+- [x] Profile
+  - [X] Now we can view user profile
+  - [x] Standard Profile
+  - [x] Edit Profile
+  - [x] Standard Profile Edit
   <br>
   ## Progress
   ### Home
@@ -45,6 +51,7 @@ For study purpose only. :test_tube: :alembic: <br>
   ### Products
   ->Products grid show<br>
   ->Filter Feature<br>
+  ### Profile
   ->
 
 ### FlowChart
