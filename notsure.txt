@@ -15,3 +15,8 @@ def signup(request):
 path('accounts/signup/',myapp_views.CustomSignup.as_view(),name="signup")
 
 mmmm12345678AB
+
+{% url 'product_item' product_item=product.product_item %}
+<p class="origin">Origin: {{ product.origin }}</p>
+            <p class="roast-level">Roast Level: {{ product.roast_level }}</p>
+            <p class="stock">Stock: {{ product.stock }}</p>

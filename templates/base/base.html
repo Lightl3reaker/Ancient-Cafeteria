@@ -8,11 +8,15 @@
       rel="stylesheet"
       href="{% static 'bootstrap/css/bootstrap.min.css' %}"
     />
-    <link rel="stylesheet"
-    href="{% static 'fontawesome/pro/css/all.min.css' %}">
-    <link rel="stylesheet" href="{% static 'bootstrap/css/base.css' %}"/>
-    <link rel="stylesheet" href="{% static 'bootstrap/css/account.css' %}"/>
-    <link rel="stylesheet" href="{% static 'bootstrap/css/Profile.css' %}"/>
+    <link
+      rel="stylesheet"
+      href="{% static 'fontawesome/pro/css/all.min.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'bootstrap/css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'bootstrap/css/account.css' %}" />
+    <link rel="stylesheet" href="{% static 'bootstrap/css/Profile.css' %}" />
+    <link rel="stylesheet" href="{% static 'bootstrap/css/styleforsp.css' %}" />
+
     <title>{% block title %}{% endblock %}</title>
   </head>
   <body>
@@ -36,18 +40,34 @@
                 <a class="nav-link active" href="{% url 'home' %}">Home</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Account</a>
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                  >Account</a
+                >
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{%url 'login'%}">LogIn</a></li>
-                  <li><a class="dropdown-item" href="{%url 'signup'%}">SignUp</a></li>
+                  <li>
+                    <a class="dropdown-item" href="{%url 'login'%}">LogIn</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="{%url 'signup'%}">SignUp</a>
+                  </li>
                 </ul>
               </li>
               {%if request.user.is_authenticated%}
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{request.user.username}}</a>
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                  >{{request.user.username}}</a
+                >
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{%url 'profile'%}">Profile</a></li>
-                  <li><a class="dropdown-item" href="{%url 'edit_profile'%}">Edit Profile</a></li>
+                  <li>
+                    <a class="dropdown-item" href="{%url 'profile'%}"
+                      >Profile</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="{%url 'edit_profile'%}"
+                      >Edit Profile</a
+                    >
+                  </li>
                 </ul>
               </li>
               {%endif%}

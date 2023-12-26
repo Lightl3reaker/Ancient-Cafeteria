@@ -27,6 +27,7 @@ class Tag(models.Model):
 
 class Product(models.Model):
     title=models.CharField(max_length=256,default="",blank=True)
+    p_id = models.CharField(max_length=50)  #  new field
     tags=models.ManyToManyField(Tag)
     slug=models.SlugField(blank=True,default='')
     description=models.TextField()

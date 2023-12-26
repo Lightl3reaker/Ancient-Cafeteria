@@ -1,0 +1,46 @@
+{% extends 'base/base.html' %} {% block content %}
+<!--<h1>{{ product_item.title }}</h1>-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ product_item.title }} - Coffee Product</title>
+  </head>
+  <body>
+    <header>
+      <h1>{{ product_item.title }}</h1>
+    </header>
+
+    <section class="product-container">
+      <img
+        src="{{ product_item.image_thumbnail.url }}"
+        alt="{{ product_item.title }} Image"
+        class="product-image"
+      />
+
+      <div class="product-details">
+        <p class="description">
+          {{ product_item.description|truncatechars:100 }}
+        </p>
+        <p class="price">Price: {{ product_item.price }}MMK</p>
+        <div class="mb-2">
+          {% for tag in product_item.tags.all %}
+          <span class="badge bg-secondary">{{tag}}</span>
+          {% endfor %}
+        </div>
+      </div>
+
+      <a href="{% url 'products_view' %}" class="back-link"
+        >Back to Coffee Products</a
+      >
+    </section>
+
+    <footer>
+      <!-- Add your footer content here -->
+    </footer>
+  </body>
+</html>
+
+{% endblock %}

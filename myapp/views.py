@@ -109,4 +109,9 @@ def contact_us(request):
         contact.message = message
         contact.save()
         return render(request,"httpresponse/contactresponse.html")
-    return render(request ,'myapp/contact.html')    
+    return render(request ,'myapp/contact.html') 
+
+def display_product_item(request,p_id):
+    product_item = Product.objects.get(p_id=p_id)
+    context = {'product_item':product_item}
+    return render(request,"myapp/product_item.html",context) 
